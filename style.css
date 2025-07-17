@@ -1,0 +1,38 @@
+.navbar {
+    height: 14%;
+}
+.logo-container {
+    width: 7%;
+}
+.logo {
+    height: 70%;
+}
+.user-container {
+    width: 10%;
+}
+.user {
+    color: #2d74a3;
+}
+.border-fixed {
+    border-bottom: 3px solid #2d74a3;
+}
+.text-fixed h6, 
+.text-fixed i {
+    color: #2d74a3;
+}
+.menu {
+    width: 4%;
+    background-color: #1a405c;
+}
+.menu i {
+    color: #ffff;
+}
+
+.border-hover:hover {
+    border-bottom: 3px solid #2d74a3;
+}
+.text-format:hover,
+.text-format:hover h6,
+.text-format:hover i {
+    color: #2d74a3;
+}
