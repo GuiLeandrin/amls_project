@@ -8,9 +8,12 @@
     <script src="https://kit.fontawesome.com/576a6b1350.js" crossorigin="anonymous"></script>
     <link rel="icon" href="favicon.png" type="image/png">
     <title>Área Administrativa - AMLS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="vh-100 wh-100 ">
-    <header class="w-100 p-0 d-flex shadow mb-4 navbar">
+    <header class="w-100 p-0 d-flex shadow navbar">
         <div class="h-100 d-flex justify-content-center align-items-center logo-container">
             <img class="rounded-circle w-auto logo" title="Academia Musical Lucas Soares" src="logo.jpg" alt="Logo AMLS">
         </div>
@@ -42,7 +45,7 @@
             <div class="h-100 w-auto d-flex justify-content-center align-items-center px-4 border-hover text-format">
                 <a href="" class="d-flex align-items-center gap-1 text-decoration-none text-reset">
                     <i class="fa-solid fa-calendar-days"></i>
-                    <h6 class="m-0">Cronograma</h6>
+                    <h6 class="m-0">Cronograma Escola</h6>
                 </a>
             </div>
         </div>
@@ -50,12 +53,52 @@
             <h6 class="m-0">Olá! <span class="user">Admin</span></h6>
         </div>
     </header>
-    <nav class="h-75 gap-5 d-flex flex-column align-items-center justify-content-center shadow-lg rounded-3 ms-3 menu">
-        <a href="" title="Adicionar Colaborador"><i class="fa-solid fs-5 fa-plus"></i></a>
-        <a href="" title="Deletar Colaborador"><i class="fa-solid fs-5 fa-trash"></i></a>
-        <a href="" title="Editar Colaborador"><i class="fa-solid fs-5 fa-pen"></i></a>
-        <a href="" title="Ponto Eletrônico"><i class="fa-solid fs-5 fa-clock"></i></a>
-        <a href="" title="Relatórios RH"><i class="fa-solid fs-5 fa-file"></i></a>
-    </nav>
+    <main class="w-100 p-4 d-flex main">
+        <aside class="h-100 gap-5 d-flex flex-column align-items-center justify-content-center me-4 shadow-lg rounded-2 menu">
+            <a href="" title="Gerenciamento de Colaboradores"><i class="fa-solid fs-5 fa-users"></i></a>
+            <a href="" title="Relatório Colaboradores"><i class="fa-solid fs-5 fa-book"></i></a>
+            <a href="" title="Ponto Eletrônico"><i class="fa-solid fs-5 fa-clock"></i></a>
+            <a href="" title="Relatório Ponto Eletrônico"><i class="fa-solid fs-5 fa-file"></i></a>
+        </aside>
+        <section class="h-100 w-100 rounded-2 shadow-lgs section p-4">
+            <form action="" method="POST">
+                <div class="w-100 h-25">
+                    <h4 class="mb-4 title">Gerenciamento de Colaboradores:</h4>
+                    <div class="mb-3 d-flex gap-3">
+                        <button class="border-0 rounded-2 buttons" title="Pesquisar" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button class="border-0 rounded-2 buttons" title="Salvar" type="submit"><i class="fa-solid fa-floppy-disk"></i></button>
+                        <button class="border-0 rounded-2 buttons" title="Excluir" type="submit"><i class="fa-solid fa-trash"></i></button>
+                        <button class="border-0 rounded-2 buttons" title="Adicionar" type="submit"><i class="fa-solid fa-plus"></i></button>
+                        <div class="d-flex align-items-center gap-2 ms-auto">
+                            <h6 class="m-0">Status Ativo?</h6>
+                            <input class="form-check-input" type="checkbox" value="1" id="status" name="status">
+                        </div>
+                    </div>
+                    <div class="gap-4 mb-4 d-flex">
+                        <input type="text" class="form-control w-50" placeholder="Nome:" name="nome" id="nome">
+                        <input type="text" class="form-control w-50" name="data" id="data" placeholder="Data de Nascimento:" maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g,'').replace(/(\d{2})(\d)/,'$1/$2').replace(/(\d{2})\/(\d{2})(\d)/,'$1/$2/$3').slice(0,10)">
+                    </div>
+                    <div class="gap-4 mb-4 d-flex">
+                        <input type="text" class="form-control w-50" name="cpf" id="cpf" placeholder="CPF:" maxlength="14" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
+                        <input type="text" class="form-control w-50" name="rg" id="rg" placeholder="RG:" maxlength="12" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{2})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1})$/,'$1-$2')">
+                    </div>
+                    <div class="gap-4 mb-4 d-flex">
+                        <input type="text" class="form-control w-50" placeholder="Cargo:" name="cargo" id="cargo">
+                        <input type="text" class="form-control w-50" placeholder="Setor:" name="setor" id="setor">
+                        <input type="text" class="form-control w-50" placeholder="Liderança:" name="lideranca" id="lideranca">
+                    </div>
+                    <div class="gap-4 mb-4 d-flex">
+                        <input type="tel" class="form-control w-50" name="telefone" id="telefone" placeholder="Telefone:" maxlength="15" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{2})(\d)/,'($1) $2').replace(/(\d{5})(\d)/,'$1-$2').slice(0,15)">
+                        <input type="email" class="form-control w-50" name="email" id="email" placeholder="E-mail:">
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <input type="file" placeholder="Foto 3x4:" class="form-control" name="arquivo" id="arquivo">
+                    </div>
+                </div>
+            </form>
+            
+        </section>
+    </main>
+
 </body>
 </html>
